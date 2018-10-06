@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>  </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="script/swiper.min.js"></script>
+        <!-- <nav>
+            <ul>
+                <li><a href="#div-cul">文化</a></li>
+                <li><a href="#div-art">艺术</a></li>
+                <li><a href="#div-food">食物</a></li>
+            </ul>
+        </nav> -->
+        
+        <div class="swiper-cul" id="div-cul">
+            
+            <div class="swiper-container" id="cul">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+            </div>
+            <div class="swiper-container" id="cul-img">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+            </div>    
+        </div>
+        <div class="swiper-art swiper-div" id="div-art"></div>
+        <div class="swiper-food swiper-div" id="div-food"></div>
+    <script>
+        var swiper_nav = new Swiper ('#nav', {
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            // autoplay:true,
+            autoplay: {
+                delay: 3800,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+                },
+            // controller:{
+            //     control:swiper_cul_img1,
+            // },
+        });
+        //文化
+        var swiper_cul = new Swiper ('#cul', {
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            // autoplay:true,
+            autoplay: {
+                delay: 3800,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+                },
+            controller:{
+                control:swiper_cul_img1,
+            },
+        });
+        var swiper_cul_img1 = new Swiper("#cul-img",{
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            controller:{
+                control:swiper_cul,
+            },
+            
+        });
+        swiper_cul.controller.control = swiper_cul_img1;//控制对象初始化  
+        swiper_cul_img1.controller.control = swiper_cul;
+          
+
+
+        </script>
+          
+    </body>
+</html>

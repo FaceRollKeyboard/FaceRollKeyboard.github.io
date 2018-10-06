@@ -1,0 +1,41 @@
+/* body {
+    height: 100%;
+    width: 100%;
+} */
+
+/* target单页分主题失败 */
+/* 还有两个方法：
+1.用fullPage.js
+缺点：技术不统一，可能不兼容，
+    且说明较少。
+2.swiper嵌套
+缺点：难度大，也可能出现target的情况 */
+
+/* .swiper-div{
+    display: none;
+}
+
+:target{
+    display: block
+} */
+
+.swiper-cul {
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+
+}
+
+#cul {
+    width: 50rem;
+    height: 50rem;
+    background-color: aqua;
+}
+
+#cul-img {
+    width: 20rem;
+    height: 70rem;
+    background-color: brown
+}
+
+/* 更改图片样式 */
