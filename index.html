@@ -18,49 +18,51 @@
         <![endif]-->
         
         <script src="script/swiper.min.js"></script>
-        <!-- <nav>
-            <ul>
-                <li><a href="#div-cul">文化</a></li>
-                <li><a href="#div-art">艺术</a></li>
-                <li><a href="#div-food">食物</a></li>
-            </ul>
-        </nav> -->
         
-        <div class="swiper-cul" id="div-cul">
-            
-            <div class="swiper-container" id="cul">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-cul swiper-div" id="div-cul">
+            <div class="nav_and_text">
+                <nav>
+                    <ul>
+                        <li><a href="#div-cul">文化</a></li>
+                        <li><a href="#div-art">艺术</a></li>
+                        <li><a href="#div-food">食物</a></li>
+                    </ul>
+                </nav>
+                <div class="swiper-container" id="cul">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-container" id="cul-img">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
+            <div class="img1_and_img2">
+                <div class="swiper-container" id="cul-img1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                    </div>
+                </div>  
+                <div class="swiper-container" id="cul-img2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                    </div>
                 </div>
-            </div>    
+            </div>      
         </div>
-        <div class="swiper-art swiper-div" id="div-art"></div>
-        <div class="swiper-food swiper-div" id="div-food"></div>
+        <div class="swiper-art " id="div-art">暂时没写2</div>
+        <div class="swiper-food swiper-div" id="div-food">暂时没写2</div>
     <script>
-        var swiper_nav = new Swiper ('#nav', {
-            direction: 'vertical', // 垂直切换选项
-            loop: true, // 循环模式选项
-            // autoplay:true,
-            autoplay: {
-                delay: 3800,
-                stopOnLastSlide: false,
-                disableOnInteraction: true,
-                },
-            // controller:{
-            //     control:swiper_cul_img1,
-            // },
-        });
+
+        //所有
+      
         //文化
         var swiper_cul = new Swiper ('#cul', {
+            // observer:true,
+            // observeParents:true,
             direction: 'vertical', // 垂直切换选项
             loop: true, // 循环模式选项
             // autoplay:true,
@@ -68,21 +70,42 @@
                 delay: 3800,
                 stopOnLastSlide: false,
                 disableOnInteraction: true,
-                },
+                },  
             controller:{
+                // control:[swiper_cul_img1,swiper_cul_img2],
                 control:swiper_cul_img1,
-            },
-        });
-        var swiper_cul_img1 = new Swiper("#cul-img",{
-            direction: 'vertical', // 垂直切换选项
-            loop: true, // 循环模式选项
-            controller:{
-                control:swiper_cul,
+                inverse :true,
             },
             
         });
-        swiper_cul.controller.control = swiper_cul_img1;//控制对象初始化  
-        swiper_cul_img1.controller.control = swiper_cul;
+        var swiper_cul_img1 = new Swiper("#cul-img1",{
+            // observer:true,
+            // observeParents:true,
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            controller:{
+                // control:[swiper_cul,swiper_cul_img2],
+                control:swiper_cul_img2
+            },
+            
+        });
+        var swiper_cul_img2 = new Swiper("#cul-img2",{
+            // observer:true,
+            // observeParents:true,
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            controller:{
+                // control:[swiper_cul,swiper_cul_img1],
+                control:swiper_cul_img1
+                
+            },
+            
+        });
+        
+        //控制对象初始化  
+        swiper_cul_img1.controller.control = swiper_cul_img2;
+        swiper_cul_img2.controller.control = swiper_cul_img1;
+        swiper_cul.controller.control = swiper_cul_img1;
           
 
 
