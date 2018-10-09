@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>  </title>
+        <title>culture</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/swiper.min.css">
@@ -86,8 +86,7 @@
                 // control:[swiper_cul_img1,swiper_cul_img2],
                 control:swiper_cul_img1,
                 inverse :true,
-            },
-            
+            },  
         });
         var swiper_cul_img1 = new Swiper("#cul-img1",{
             // observer:true,
@@ -98,8 +97,7 @@
                 // control:[swiper_cul,swiper_cul_img2],
                 control:swiper_cul_img2,
                 inverse :true,
-            },
-            
+            }, 
         });
         var swiper_cul_img2 = new Swiper("#cul-img2",{
             // observer:true,
@@ -108,19 +106,14 @@
             loop: true, // 循环模式选项
             controller:{
                 // control:[swiper_cul,swiper_cul_img1],
-                control:swiper_cul_img1
-                
-            },
-            
+                control:swiper_cul_img1 
+            },    
         });
         
         //控制对象初始化  
         swiper_cul_img1.controller.control = swiper_cul_img2;
         swiper_cul_img2.controller.control = swiper_cul_img1;
         swiper_cul.controller.control = swiper_cul_img1;
-          
-
-
         </script>
           
     </body>
