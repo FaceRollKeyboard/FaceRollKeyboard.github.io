@@ -1,46 +1,93 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>food</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/swiper.min.css">
-        <link rel="stylesheet" href="css/index.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <script src="script/swiper.min.js"></script>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>传统美食</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/food.css">
+</head>
+<body>
+ 
+    <script src="script/swiper3.min.js"></script>
+<div class="container">
+	<div id="nav">
+    <span><a href="#index">首页</a></span>
+		<span><a href="culture.html">文化</a></span> 
+		<span><a href="#div-art">艺术</a></span> 
+		<span><a href="#div-food">食物</a></span> 
+		
+	</div>
+	<div class="timeline">
+		<div class="swiper-container">
+		  <div class="swiper-wrapper">
+			<div class="swiper-slide" data-year="时间轴_年份1">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份1</span>
+				<h4 class="timeline-title">标题1</h4>
+				<p class="timeline-text">文本1</p>
+			  </div>
+			</div>
+			<div class="swiper-slide"  data-year="时间轴_年份2">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份2</span>
+				<h4 class="timeline-title">标题2</h4>
+				<p class="timeline-text">文本2</p>
+			  </div>
+			</div>
+			<div class="swiper-slide" data-year="时间轴_年份3">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份3</span>
+				<h4 class="timeline-title">标题3</h4>
+				<p class="timeline-text">文本3</p>
+			  </div>
+			</div>
+			<div class="swiper-slide"  data-year="时间轴_年份4">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份4</span>
+				<h4 class="timeline-title">标题4</h4>
+				<p class="timeline-text">文本4Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			  </div>
+			</div>
+			<div class="swiper-slide"  data-year="时间轴_年份5">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份5</span>
+				<h4 class="timeline-title">标题5</h4>
+				<p class="timeline-text">文本5Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			  </div>
+			</div>
+			<div class="swiper-slide"  data-year="时间轴_年份6">
+			  <div class="swiper-slide-content"><span class="timeline-year">年份6</span>
+				<h4 class="timeline-title">标题6</h4>
+				<p class="timeline-text">文本6Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			  </div>
+			</div>
+		  </div>
+		  <div class="swiper-button-prev"></div>
+		  <div class="swiper-button-next"></div>
+		  <div class="swiper-pagination"></div>
+		</div>
+  </div>
+</div>
 
-        <div id="nav">
-            <span><a href="#div-cul">文化</a></span> 
-            <span><a href="#div-art">艺术</a></span> 
-            <span><a href="#div-food">食物</a></span> 
-            <div id="nav_logo">nav_logo</div>
-        </div>
-        <div class="swiper-container" id="food">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-            </div>
-        </div>
-        <div class="swiper-container" id="cul-img1">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-            </div>
-        </div> 
-    </body>
+   
+    
+
+    
+    <script>
+    var timelineSwiper = new Swiper ('.timeline .swiper-container', {
+      direction: 'vertical',
+      loop: false,
+      speed: 1600,
+      mousewheelControl : true,
+      pagination: '.swiper-pagination',
+      paginationBulletRender: function (swiper, index, className) {
+        var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+        return '<span class="' + className + '">' + year + '</span>';
+      },
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      breakpoints: {
+        768: {
+          direction: 'horizontal',
+        }
+      }
+  });
+    </script>
+</body>
 </html>
